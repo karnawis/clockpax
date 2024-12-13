@@ -14,9 +14,6 @@ function App() {
         Paxoria Game
       </h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <p>
         <a href="https://unleaving.com" target="_blank">
           <img src={gameImage} alt="game image" />
@@ -24,7 +21,9 @@ function App() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on game to learn more
+      <button onClick={() => setCount((count) => count + 1)}>
+          <span className="text-red-500 text-4xl">count is {count}</span>
+        </button>
       </p>
     </>
   )
