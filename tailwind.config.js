@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'clockpax-dark': '#0000F7',
+      },
       theme: {
         extend: {
           fontFamily: {
