@@ -1,22 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import useSound from 'use-sound';
-import chimes from '../../assets/sounds/soundbuttonclick.wav';
+import useSoundHandler from '../../hook/useSoundHandler';
 
 const GameWrapper = ({ children }) => {
-    const [play, {stop}] = useSound(chimes);
+    const { handlePlaySound } = useSoundHandler();
     const [reveal, setRevealmessage] = useState(true);
-    const [isPlaying, setIsPlaying] = useState(false); 
-
-    const handlePlaySound = () => {
-        if (!isPlaying) {
-            setIsPlaying(true);
-            play();
-        } else {
-            setIsPlaying(false);
-            stop();
-        }
-    };
 
     const revealScreenOn = () => {
         handlePlaySound();
