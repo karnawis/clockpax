@@ -4,11 +4,22 @@ import useSound from 'use-sound';
 import chimes from '../../assets/sounds/soundbuttonclick.wav';
 
 const GameWrapper = ({ children }) => {
-    const [playReveal] = useSound(chimes);
+    const [play, {stop}] = useSound(chimes);
     const [reveal, setRevealmessage] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false); 
+
+    const handlePlaySound = () => {
+        if (!isPlaying) {
+            setIsPlaying(true);
+            play();
+        } else {
+            setIsPlaying(false);
+            stop();
+        }
+    };
 
     const revealScreenOn = () => {
-        playReveal();
+        handlePlaySound();
         setRevealmessage(false);
     }
 {/*}
@@ -24,6 +35,7 @@ const GameWrapper = ({ children }) => {
         setCreditsOpen(false)
     }
 */}
+
 
     return (
         <div id="game-wrapper" className="relative bg-gray-800 text-white min-h-screen">
