@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         'clockpax-dark': '#0000F7',
+          primary: '#1f2937',
+
       },
       theme: {
         extend: {

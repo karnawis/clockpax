@@ -3,7 +3,14 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
+:root {
+    --primary: theme(colors.primary);
+}
+
+
+
+
 html {
-    background: black;
-    color: white;
+    background-color: var(--primary);
 }
