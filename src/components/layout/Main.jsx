@@ -4,9 +4,7 @@ import Navigation from '../ui/Navigation';
 import Poem from './Poem';
 const Main = () => {
     return (
-    
     <>
-
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
 

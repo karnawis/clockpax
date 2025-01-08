@@ -30,7 +30,8 @@ export const GameProvider = ({ children }) => {
         description: "all roads go to the same place",
     },
     }
-    const [currentArea, setCurrentArea] = useState(area.start)
+    const [currentArea, setCurrentArea] = useState(areas.start)
+
     return (
     <GameContext.Provider value={{ areas, currentArea, setCurrentArea }}>
         {children}
