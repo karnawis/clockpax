@@ -8,4 +8,9 @@
 
 # to do list
 
-- add game provider and view port for each area`
+- feed off the panel, show table
+- Display image
+
+# Done
+
+- add game provider and view port for each area
