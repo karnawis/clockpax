@@ -4,7 +4,7 @@ import useSoundHandler from '../../hook/useSoundHandler';
 
 const GameWrapper = ({ children }) => {
     const { handlePlaySound } = useSoundHandler();
-    const [reveal, setRevealmessage] = useState(true);
+    const [reveal, setRevealmessage] = useState(false);
 
     const revealScreenOn = () => {
         handlePlaySound();

@@ -1,5 +1,6 @@
 import gameImage2 from '../../assets/images/clockspax-mid-night-skies.jpg'
-import Navigation from './Navigation';
+import Details from '../ui/Details';
+import Navigation from '../ui/Navigation';
 import Poem from './Poem';
 const Main = () => {
     return (
@@ -23,10 +24,7 @@ const Main = () => {
     <Poem />
 
     {/* Interactable Object Info Area (spans full width, placed below on small screens) */} 
-        <div className="lg:col-span-4 bg-white p-4 rounded-lg shadow">
-            <h2 className="text-xl font-bold text-gray-800 mb-2">Object Information</h2>
-            <p>Details about the selected object will appear here.</p>
-        </div>
+    <Details />
     </div>
     <Navigation />
 
