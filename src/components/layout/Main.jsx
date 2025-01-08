@@ -1,6 +1,5 @@
 import gameImage2 from '../../assets/images/clockspax-mid-night-skies.jpg'
 import Details from '../ui/Details';
-import Navigation from '../ui/Navigation';
 import Poem from './Poem';
 const Main = () => {
     return (
@@ -24,7 +23,7 @@ const Main = () => {
     {/* Interactable Object Info Area (spans full width, placed below on small screens) */} 
     <Details />
     </div>
-    <Navigation />
+    {/* Panel button */}
 
     </>
     );

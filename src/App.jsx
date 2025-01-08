@@ -15,8 +15,8 @@ function App() {
         <GameWrapper>
           <Header />
           <Main />
-          <Footer />
           <Panel />
+          <Footer />
         </ GameWrapper>
       </GameProvider>
     </div>

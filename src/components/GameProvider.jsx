@@ -8,8 +8,17 @@
 
     const [currentArea, setCurrentArea] = useState(areas.area3)
 
+    const handleExit = (exit) => {
+        setCurrentArea(exit)
+    }
+
     return (
-        <GameContext.Provider value={{ areas, currentArea, setCurrentArea }}>
+        <GameContext.Provider value={{ 
+                areas, 
+                currentArea, 
+                setCurrentArea, 
+                handleExit 
+            }}>
             {children}
         </GameContext.Provider>
         )
