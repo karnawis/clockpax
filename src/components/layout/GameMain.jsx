@@ -1,6 +1,7 @@
 import Details from '../ui/GameDetails';
 import Poem from '../ui/GamePoem';
 import Views from '../Game/Views';
+import Verbs from '../core/Verbs';
 
 const GameMain = () => {
     return (
@@ -10,6 +11,7 @@ const GameMain = () => {
             <Views />
             <Poem />
             <Details />
+            <Verbs />
         </div>
     </>
     );
