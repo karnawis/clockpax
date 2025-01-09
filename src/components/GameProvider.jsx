@@ -1,22 +1,22 @@
     import { createContext, useContext, useState } from "react";
     import PropTypes from "prop-types";
-    import { areas } from "../data/data";
+    import { scenes } from "../data/scenes";
 
     const GameContext = createContext()
 
     export const GameProvider = ({ children }) => {
 
-    const [currentArea, setCurrentArea] = useState(areas.area3)
+    const [currentScene, setCurrentScene] = useState(scenes.scene3)
 
     const handleExit = (exit) => {
-        setCurrentArea(exit)
+        setCurrentScene(exit)
     }
 
     return (
         <GameContext.Provider value={{ 
-                areas, 
-                currentArea, 
-                setCurrentArea, 
+                scenes, 
+                currentScene, 
+                setCurrentScene, 
                 handleExit 
             }}>
             {children}

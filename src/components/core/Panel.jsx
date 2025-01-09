@@ -4,11 +4,11 @@ import PanelButtons from '../ui/PanelButtons';
 
 
 const Panel = () => {
-    const { currentArea, areas, handleExit } = useGameProvider();
-    const exits = currentArea.exits;
+    const { currentScene, scenes, handleExit } = useGameProvider();
+    const exits = currentScene.exits;
 
     const Exit = ({ exitName }) => {
-        const exit = areas[exitName]
+        const exit = scenes[exitName]
         return (
             <td className="exit"> 
                 <PanelButtons name={exitName} onClick={() => handleExit(exit)} />
@@ -28,15 +28,15 @@ const Panel = () => {
 
     useEffect(() => {
         try {
-            if (currentArea) {
-                console.log(`current area >> ${currentArea.Exit}`);
+            if (currentScene) {
+                console.log(`current scene >> ${currentScene.Exit}`);
             } else {
-                console.log(`current area >> ${currentArea}`);
+                console.log(`current scene >> ${currentScene}`);
             }
         } catch (error) {
             console.log(`Error >> ${error} ${error.message}`);
         }
-    }, [currentArea]);
+    }, [currentScene]);
 
     return (
     <div id="panel" className="mt-6 grid grid-cols-9 gap-2 max-w-6xl mx-auto">

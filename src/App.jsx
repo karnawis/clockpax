@@ -1,11 +1,10 @@
 import './App.css'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
-import Main from './components/layout/Main'
+import GameMain from './components/layout/GameMain'
 import GameWrapper from './components/layout/GameWrapper'
 import { GameProvider } from './components/GameProvider'
 import Panel from './components/core/Panel'
-
 
 function App() {
 
@@ -14,7 +13,7 @@ function App() {
       <GameProvider>
         <GameWrapper>
           <Header />
-          <Main />
+          <GameMain />
           <Panel />
           <Footer />
         </ GameWrapper>
