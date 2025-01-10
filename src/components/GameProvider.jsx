@@ -7,8 +7,11 @@
     export const GameProvider = ({ children }) => {
 
     const [currentScene, setCurrentScene] = useState(scenes.scene3)
-    
+    const [currentDetails, setCurrentDetails] = useState(
+        scenes.scene3.details
+    )
     const [currentVerb, setCurrentVerb] = useState("explore")   
+    const interactables = ["key"]
     const verbs = ["explore","use"]
 
     const handleExit = (exit) => {
@@ -24,6 +27,9 @@
                 verbs,
                 currentVerb,
                 setCurrentVerb, 
+                interactables,
+                currentDetails,
+                setCurrentDetails,
             }}>
             {children}
         </GameContext.Provider>

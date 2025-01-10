@@ -14,3 +14,4 @@
 # Done
 
 - add game provider and view port for each area
+- add ReactTyped for typing

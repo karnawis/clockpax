@@ -2,16 +2,22 @@ import Details from '../ui/GameDetails';
 import Poem from '../ui/GamePoem';
 import Views from '../Game/Views';
 import Verbs from '../core/Verbs';
+import Panel from '../core/Panel';
+import Interactable from '../core/Interactable';
 
 const GameMain = () => {
     return (
     <>
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="w-full relative">
             <Views />
-            <Poem />
-            <Details />
-            <Verbs />
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8'>
+                <Details />
+                <Poem />
+                <Verbs />
+                <Panel />
+                <Interactable />
+            </div>
         </div>
     </>
     );

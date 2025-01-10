@@ -4,7 +4,6 @@ import Footer from './components/layout/Footer'
 import GameMain from './components/layout/GameMain'
 import GameWrapper from './components/layout/GameWrapper'
 import { GameProvider } from './components/GameProvider'
-import Panel from './components/core/Panel'
 
 function App() {
 
@@ -14,7 +13,6 @@ function App() {
         <GameWrapper>
           <Header />
           <GameMain />
-          <Panel />
           <Footer />
         </ GameWrapper>
       </GameProvider>

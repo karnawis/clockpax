@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useGameProvider } from '../GameProvider';
 import PanelButtons from '../ui/PanelButtons';
 
@@ -38,8 +39,12 @@ const Panel = () => {
         }
     }, [currentScene]);
 
+    Exit.propTypes = {
+        exitName: PropTypes.string.isRequired,
+    };
+
     return (
-    <div id="panel" className="mt-6 grid grid-cols-9 gap-2 max-w-6xl mx-auto">
+    <div id="panel" className="">
         <table>
             <tbody>
             {rows.map((row, rowIndex) => (
