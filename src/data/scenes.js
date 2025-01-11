@@ -1,6 +1,7 @@
 import image1 from "../assets/images/clockpax-tree-leaf-door.jpg";
 import image2 from "../assets/images/clockpax-swing-park.jpg";
 import image3 from "../assets/images/cloclspax-mirror-1.jpg";
+import { verbSets } from "./sceneSets";
 /*
 import image4 from "../assets/images/cloclspax-carrot-snowman.jpg";
 import image5 from "../assets/images/clockspax-mid-night-skies.jpg";
@@ -10,35 +11,98 @@ import image8 from "../assets/images/clockpax-ferriswheel-circus.jpg";
 import image9 from "../assets/images/clockpax-feather-pen-letter.jpg";
 */
 
+export const verbs = ["explore","use"]
+
 export const scenes = {
     scene1: {
+        key: "s1",
         name: "Scene 1 Name",
         exits: { a1: "scene2" },
-        description: "Details 1",
         image: image1,
         puzzle: "Puzzle 1",
-        explore: [],
-        use: [],
-        verbs: {},
+        details: "Details 1",
+        Interactables:[
+            {
+                name: "scene1Object1",
+                image: image1,
+                x: 250,
+                y: 250,
+                width: 50,
+                height: 50,
+                verbs: verbSets.scene1Object1,
+            },{
+                name: "scene1Object2",
+                image: image1,
+                x: 200,
+                y: 200,
+                width: 50,
+                height: 50,
+                verbs: verbSets.scene1Object2,
+            }
+        ]
     },
     scene2: {
+        key: "s2",
         name: "Scene 2 Name",
         exits: { a2: "scene1", b2: "scene3" },
-        description: "Details 2",
         image: image2,
         puzzle: "Puzzle 2",
-        explore: [],
-        use: [],
+        details: "Details 2",
+        Interactables:[
+            {
+                name: "scene2Object1",
+                image: image1,
+                x: 250,
+                y: 250,
+                width: 50,
+                height: 50,
+                verbs: verbSets.scene2Object1,
+            },{
+                name: "scene2Object2",
+                image: image1,
+                x: 200,
+                y: 200,
+                width: 50,
+                height: 50,
+                verbs: verbSets.scene2Object2,
+            }
+        ]
     },
     scene3: {
+        key: "s3",
         name: "Scene 3 Name",
-        exits: { a1: "scene2" },
-        description: "Details 3",
+        exits: { a1: "scene2", b1: "scene1" , c1: "scene3" , a2: "scene2", a3: "scene1", b2: "scene2", b3: "scene3", c2: "scene1", c3: "scene2" },
         image: image3,
+        isMore: true,
         puzzle: "Puzzle 3",
-        explore: [],
-        use: [],
+        details: "Details 3",
+        Interactables:[
+            {
+                name: "scene3Object1",
+                image: image3,
+                x: 250,
+                y: 250,
+                width: 50,
+                height: 50,
+                verbs: verbSets.scene3Object1,
+            },{
+                name: "scene3Object2",
+                image: image3,
+                x: 200,
+                y: 200,
+                width: 50,
+                height: 50,
+                verbs: verbSets.scene1Object2,
+            }
+        ]
     },
+    
+/*
+    explore: [],
+    use: [],
+    verbs: {},
+*/
+
     /*
     scene4: {
         name: "Scene 4 Name",

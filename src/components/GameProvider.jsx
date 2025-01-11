@@ -1,6 +1,6 @@
     import { createContext, useContext, useState } from "react";
     import PropTypes from "prop-types";
-    import { scenes } from "../data/scenes";
+    import { scenes, verbs } from "../data/scenes";
 
     const GameContext = createContext()
 
@@ -12,7 +12,6 @@
     )
     const [currentVerb, setCurrentVerb] = useState("explore")   
     const interactables = ["key"]
-    const verbs = ["explore","use"]
 
     const handleExit = (exit) => {
         setCurrentScene(exit)

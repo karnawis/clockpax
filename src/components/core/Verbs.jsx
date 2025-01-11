@@ -38,7 +38,7 @@ const Verbs = () => {
         handleSelect(verb)
         }}
         >
-        {verb} test
+        {verb}
     </button>
     )
 
