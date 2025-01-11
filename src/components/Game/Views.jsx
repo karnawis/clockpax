@@ -1,32 +1,10 @@
-import { scenes } from "../../data/scenes";
 import { useGameProvider } from "../GameProvider"
 
 const Views = () => {
     const { 
-            verbs,
-            scenes,
-            currentScene,
-            setCurrentScene,
-            setCurrentDetails,
-            currentVerb,
-            setCurrentVerb,
-
-            
+            currentScene, 
         } = useGameProvider();
 
-    const handleVerb = (sector) => {
-        if (verb?.[sector]?.[currentVerb]?.details) {
-            setCurrentDetails(verb[sector][currentVerb].details)
-            setCurrentVerb("")
-        }
-
-        if (verbs?.[sector]?.[currentVerb]?.nextscene) {
-            const nextscene = scenes[verb[sector][currentVerb].nextscene]
-            setCurrentScene(nextScene)
-            setCurrentDetails(nextscene.details)
-            setCurrentVerb("")
-        }
-        }
     return (
         <div id="views" className="bg-white p-4 rounded-lg shadow">
             <h2 className="text-slate-800 text-3xl">View Port</h2>

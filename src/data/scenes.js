@@ -1,12 +1,14 @@
 import image1 from "../assets/images/clockpax-tree-leaf-door.jpg";
 import image2 from "../assets/images/clockpax-swing-park.jpg";
 import image3 from "../assets/images/cloclspax-mirror-1.jpg";
+/*
 import image4 from "../assets/images/cloclspax-carrot-snowman.jpg";
 import image5 from "../assets/images/clockspax-mid-night-skies.jpg";
 import image6 from "../assets/images/clockpax-brush-painting.jpg";
 import image7 from "../assets/images/clockpax-fossil-museum-2.jpg";
 import image8 from "../assets/images/clockpax-ferriswheel-circus.jpg";
 import image9 from "../assets/images/clockpax-feather-pen-letter.jpg";
+*/
 
 export const scenes = {
     scene1: {
@@ -30,13 +32,14 @@ export const scenes = {
     },
     scene3: {
         name: "Scene 3 Name",
-        exits: { a2: "scene4", b2: "scene5" },
+        exits: { a1: "scene2" },
         description: "Details 3",
         image: image3,
         puzzle: "Puzzle 3",
         explore: [],
         use: [],
     },
+    /*
     scene4: {
         name: "Scene 4 Name",
         exits: { a1: "scene3", b1: "scene6" },
@@ -96,4 +99,5 @@ export const scenes = {
         use: [],
         verbs: {},
     },
+    */
 };

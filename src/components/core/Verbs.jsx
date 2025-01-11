@@ -2,30 +2,44 @@ import { useGameProvider } from "../GameProvider"
 import PropTypes from 'prop-types'
 
 const Verbs = () => {
-    const { verbs, currentAction, setCurrentAction } = useGameProvider()
+    const { setCurrentScene,
+            setCurrentDetails,
+            verbs, 
+            currentVerb,
+            setCurrentVerb
+        } = useGameProvider()
 
+    const handleSelect = (verb) => {
+            setCurrentVerb(verb)
+            const details = `What would you like to ${verb}?`
+            setCurrentDetails([details])
+            }
+        
+        const handleCancel = () => {
+            setCurrentVerb("")
+            setCurrentDetails(setCurrentScene.details)
+            }
     const Active = ({ verb }) => (
     <>
-        <span className='active-verb'>{verb}</span>
-        &nbsp;
-        <span
-        className='active-cancel'
-        onClick={() => setCurrentAction("")}
-        >
-        x
-        </span>
+        <span className='active-verb text-slate-500'>{verb}</span>
+        <button
+            className='active-cancel text-red-500 text-slate-500'
+            onClick={() => handleCancel()}
+            >
+            {verb}
+        </button>
     </>
     )
 
     const Inactive = ({ verb }) => (
-    <span
-        className='inactive-verb'
+    <button
+        className='inactive-verb text-slate-500'
         onClick={() => {
-        setCurrentAction(verb)
+        handleSelect(verb)
         }}
-    >
-        {verb}
-    </span>
+        >
+        {verb} test
+    </button>
     )
 
     Active.propTypes = {
@@ -40,9 +54,9 @@ return (
     <div id='verbs' className="bg-white rounded-lg shadow">
         <h2 className="text-slate-800 text-3xl">Verb</h2>
         <ul>
-        {verbs.map((verb,i) => (
-            <li key={i}>
-            {verb === currentAction ? (
+        {verbs.map((verb) => (
+            <li key={verb}>
+            {verb === currentVerb ? (
                 <Active verb={verb} />
             ) : (
                 <Inactive verb={verb} />
