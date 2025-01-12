@@ -1,5 +1,5 @@
 import Details from '../ui/GameDetails';
-import Poem from '../ui/GamePoem';
+import Puzzle from '../ui/GamePuzzle';
 import Views from '../Game/Views';
 import Verbs from '../core/Verbs';
 import Panel from '../core/Panel';
@@ -13,7 +13,7 @@ const GameMain = () => {
             <Views />
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8'>
                 <Details />
-                <Poem />
+                <Puzzle />
                 <Verbs />
                 <Panel />
                 <Interactable />

@@ -1,7 +1,9 @@
+import { verbSets } from "./sceneSets";
+
 import image1 from "../assets/images/clockpax-tree-leaf-door.jpg";
 import image2 from "../assets/images/clockpax-swing-park.jpg";
 import image3 from "../assets/images/cloclspax-mirror-1.jpg";
-import { verbSets } from "./sceneSets";
+
 /*
 import image4 from "../assets/images/cloclspax-carrot-snowman.jpg";
 import image5 from "../assets/images/clockspax-mid-night-skies.jpg";
@@ -20,8 +22,8 @@ export const scenes = {
         exits: { a1: "scene2" },
         image: image1,
         puzzle: "Puzzle 1",
-        details: "Details 1",
-        Interactables:[
+        details: "Details 1 placeholder",
+        interactables:[
             {
                 name: "scene1Object1",
                 image: image1,
@@ -29,7 +31,7 @@ export const scenes = {
                 y: 250,
                 width: 50,
                 height: 50,
-                verbs: verbSets.scene1Object1,
+                //: verbSets.scene1Object1,
             },{
                 name: "scene1Object2",
                 image: image1,
@@ -37,9 +39,23 @@ export const scenes = {
                 y: 200,
                 width: 50,
                 height: 50,
-                verbs: verbSets.scene1Object2,
+                //verbs: verbSets.scene1Object2,
             }
-        ]
+        ],
+        // starts here
+        verbs: {
+            a1: {
+                explore: {
+                    aheadScene: "scene2",
+                    details: "You explore the scene 1 object 1.",
+                },
+                use: {
+                    aheadScene: "scene2",
+                    details: "You use the scene 1 object 1.",
+                }
+            }
+        }
+        // end here
     },
     scene2: {
         key: "s2",
@@ -47,8 +63,8 @@ export const scenes = {
         exits: { a2: "scene1", b2: "scene3" },
         image: image2,
         puzzle: "Puzzle 2",
-        details: "Details 2",
-        Interactables:[
+        details: "Details 2 placeholder",
+        interactables:[
             {
                 name: "scene2Object1",
                 image: image1,
@@ -66,7 +82,21 @@ export const scenes = {
                 height: 50,
                 verbs: verbSets.scene2Object2,
             }
-        ]
+        ],
+        // starts here
+        verbs: {
+            a2: {
+                explore: {
+                    aheadScene: "scene2",
+                    details: "You explore the scene 1 object 1.",
+                },
+                use: {
+                    aheadScene: "scene2",
+                    details: "You use the scene 1 object 1.",
+                }
+            }
+        }
+        // end here
     },
     scene3: {
         key: "s3",
@@ -75,8 +105,8 @@ export const scenes = {
         image: image3,
         isMore: true,
         puzzle: "Puzzle 3",
-        details: "Details 3",
-        Interactables:[
+        details: "Details 3 placeholder",
+        interactables:[
             {
                 name: "scene3Object1",
                 image: image3,
@@ -96,6 +126,20 @@ export const scenes = {
             }
         ]
     },
+    // starts here
+    verbs: {
+        b1: {
+            explore: {
+                aheadScene: "scene2",
+                details: "You explore the scene 1 object 1.",
+            },
+            use: {
+                aheadScene: "scene2",
+                details: "You use the scene 1 object 1.",
+            }
+        }
+    }
+    // end here
     
 /*
     explore: [],
@@ -165,3 +209,44 @@ export const scenes = {
     },
     */
 };
+
+export const puzzleWords = [
+    {
+        key: "1",
+        name: "place holder puzzle word 1",
+    },
+    {
+        key: "2",
+        name: "place holder puzzle word 2",
+    },
+    {
+        key: "3",
+        name: "place holder puzzle word 3",
+    },
+    {
+        key: "4",
+        name: "place holder puzzle word 4",
+    },
+    {
+        key: "5",
+        name: "place holder puzzle word 5",
+    },
+    {
+        key: "6",
+        name: "place holder puzzle word 6",
+    },
+    {
+        key: "7",
+        name: "place holder puzzle word 7",
+    },
+    {
+        key: "8",
+        name: "place holder puzzle word 8",
+    },
+    {
+        key: "9",
+        name: "place holder puzzle word 9",
+    }
+
+]
+

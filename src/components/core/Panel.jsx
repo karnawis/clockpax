@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useGameProvider } from '../GameProvider';
 import PanelButtons from '../ui/PanelButtons';
@@ -27,17 +26,15 @@ const Panel = () => {
         ["c1", "c2", "c3"],
     ];
 
-    useEffect(() => {
-        try {
-            if (currentScene) {
-                console.log(`current scene >> ${currentScene.Exit}`);
-            } else {
-                console.log(`current scene >> ${currentScene}`);
-            }
-        } catch (error) {
-            console.log(`Error >> ${error} ${error.message}`);
-        }
-    }, [currentScene]);
+    // useEffect(() => {
+    //     try {
+    //         if (currentScene) {
+    //             console.log(`current scene >> ${currentScene.Exit}`);
+    //         } 
+    //     } catch (error) {
+    //         console.log(`Error >> ${error} ${error.message}`);
+    //     }
+    // }, [currentScene]);
 
     Exit.propTypes = {
         exitName: PropTypes.string.isRequired,

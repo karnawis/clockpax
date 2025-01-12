@@ -1,13 +1,16 @@
+
 import { useGameProvider } from "../GameProvider"
+
 const Interactable = () => {
     const { interactables } = useGameProvider()
+    console.log(`interactables >> ${interactables} interactables ${interactables} ` )
     return (
     <div className="bg-white rounded-lg shadow">
         <h2 className="text-slate-800 text-3xl">Interactable</h2>
         <ul>
         {interactables.map((interactable,i) => (
             <li key={i}>
-                <span className='interactable'>{interactable}</span>
+                <span className='interactable text-slate-500'>{interactable[i]}</span>
             </li>
         ))}
         </ul>
@@ -16,3 +19,4 @@ const Interactable = () => {
 }
 
 export default Interactable
+
