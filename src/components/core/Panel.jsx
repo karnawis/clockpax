@@ -20,21 +20,11 @@ const Panel = () => {
     }
 
     // 9x9 grid for now
-    const rows = [
+    const rowsMap = [
         ["a1", "a2", "a3"],
         ["b1", "b2", "b3"],
         ["c1", "c2", "c3"],
     ];
-
-    // useEffect(() => {
-    //     try {
-    //         if (currentScene) {
-    //             console.log(`current scene >> ${currentScene.Exit}`);
-    //         } 
-    //     } catch (error) {
-    //         console.log(`Error >> ${error} ${error.message}`);
-    //     }
-    // }, [currentScene]);
 
     Exit.propTypes = {
         exitName: PropTypes.string.isRequired,
@@ -44,9 +34,9 @@ const Panel = () => {
     <div id="panel" className="">
         <table>
             <tbody>
-            {rows.map((row, rowIndex) => (
-                <tr key={rowIndex} className="row">
-                    {row.map((cell) =>
+            {rowsMap.map((rowMap, rowMapIndex) => (
+                <tr key={rowMapIndex} className="row">
+                    {rowMap.map((cell) =>
                         exits?.[cell] ? (
                             <Exit
                                 key={cell}

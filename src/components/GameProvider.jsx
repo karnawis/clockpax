@@ -12,8 +12,26 @@
         scenes.scene3.details
     )
     const [currentVerb, setCurrentVerb] = useState("explore")   
-    const interactables = ["key"]
-/*
+
+    const handleVerb = (verbKey) => {
+        if (verbs?.[verbKey]?.[currentVerb]) {
+            const  aheadScene = scenes[verbs[verbKey][currentVerb].aheadScene]
+            setCurrentScene(aheadScene)
+            console.log('aheadScene key>>',aheadScene.key)
+            setCurrentDetails(verbs[verbKey][currentVerb])
+            setCurrentVerb("")
+            console.log('aheadScene >>',aheadScene)
+        }
+    }
+
+    const handleInteraction = (verbs) => {
+        console.log('verbs >>',verbs)
+        if (verbs?.[currentVerb]?.details) {
+            setCurrentDetails(verbs[currentVerb].details)
+            setCurrentVerb("default")
+        }
+    }
+    /*
     const [trackedScenes, setTrackedScenes] = useState(["scene3"])//change it 
     const addTrackScenes = (sceneKey) => {
     const index = setTrackedScenes.indexOf(sceneKey)
@@ -35,6 +53,7 @@
         setCurrentScene(exit) 
         setCurrentDetails(exit.details)
         console.log(`exit >> ${exit} ${exit.name} ${exit.details}`)
+        console.log( currentScene.interactables[0].name)
     }
 
     return (
@@ -44,12 +63,14 @@
                 setCurrentScene, 
                 handleExit,
                 puzzleWords,
+                handleVerb,
                 verbs,
                 currentVerb,
                 setCurrentVerb, 
-                interactables,
+                interactables: currentScene.interactables,
                 currentDetails,
                 setCurrentDetails,
+                handleInteraction,
             }}>
             {children}
         </GameContext.Provider>

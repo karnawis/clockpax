@@ -3,7 +3,6 @@ import Puzzle from '../ui/GamePuzzle';
 import Views from '../Game/Views';
 import Verbs from '../core/Verbs';
 import Panel from '../core/Panel';
-import Interactable from '../core/Interactable';
 
 const GameMain = () => {
     return (
@@ -16,7 +15,6 @@ const GameMain = () => {
                 <Puzzle />
                 <Verbs />
                 <Panel />
-                <Interactable />
             </div>
         </div>
     </>
