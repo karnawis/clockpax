@@ -14,9 +14,9 @@ const Views = () => {
         }
         
     return (
-        <div id="views" className="p-4 rounded-lg flex shadow items-center justify-center min-h-screen" style={{position: 'relative'}} onPointerDown={handlePointerDown}>
+        <div id="views" className="rounded-lg flex shadow items-center justify-center min-h-screen" style={{position: 'relative'}} onPointerDown={handlePointerDown}>
             {/*<h3 className="text-light-800">{currentScene.name } </h3>*/}
-            <div
+            <div className="rounded-lg mx-auto w-[500px]"
                 style={{
                     backgroundImage: `url(${currentScene?.image})`,
                     backgroundSize: '100%',

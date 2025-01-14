@@ -51,7 +51,7 @@ const Verbs = () => {
     }
 
 return (
-    <div id='verbs' className="bg-white rounded-lg shadow">
+    <div id='verbs' className="bg-white rounded-lg shadow absolute bottom-0 right-0">
         <h2 className="text-slate-800 text-3xl">Verb</h2>
         <ul>
         {verbs.map((verb) => (

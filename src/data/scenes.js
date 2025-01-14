@@ -101,7 +101,7 @@ export const scenes = {
     scene3: {
         key: "s3",
         name: "Scene 3 Name",
-        exits: { a1: "scene2", b1: "scene1" , c1: "scene3" , a2: "scene2", a3: "scene1", b2: "scene2", b3: "scene3", c2: "scene1", c3: "scene2" },
+        exits: { a1: "scene2", b2: "scene1" , c3: "scene3" },
         image: image3,
         isMore: true,
         puzzle: "Puzzle 3",
