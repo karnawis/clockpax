@@ -1,27 +1,17 @@
 
-import { useGameProvider } from "../GameProvider"
 import imgBoxPlaceholderPath from '../../assets/images/box.png'
-const Interactable = () => {
-    const { interactables, handler } = useGameProvider()
-    const { x, y, width, height, verbs, image } = interactables
+const Interactable = ({ interactable, handler }) => {
+    const { x, y, width, height, verbs, image } = interactable
 
     const handlePointerDown = () => {
         handler(verbs);
         console.log('verbs >>',verbs)
     };
 
-    console.log(`interactables >> ${interactables} interactables ${interactables} ` )
+    console.log(`interactables >> ${interactable} interactables ${interactable} ` )
     
     return (
-    <div className="bg-white rounded-lg shadow">
-        <h2 className="text-slate-800 text-3xl">Interactable</h2>
-        <ul>
-        {interactables.map((interactable,i) => (
-            <li key={i}>
-                <span className='interactable text-slate-500'>{interactable[i]}</span>
-            </li>
-        ))}
-        </ul>
+    <div className="rounded-lg shadow">
         <div>
             {/* style={{
                 background: `url(${image})`,
@@ -34,7 +24,7 @@ const Interactable = () => {
             style={{
             position: 'absolute',
             left: x,
-            top: -10,
+            top: y,
             width: width,
             height: height,
             //backgroundImage: `url(./images/${image || imgBoxPlaceholder })`,
@@ -43,11 +33,9 @@ const Interactable = () => {
             zIndex: 999,
             border: '1px solid black',
             display: 'block',
-            width: '20px',
-            height: '20px',
             background: 'red'
             }}
-            onPointerDown={handlePointerDown}
+            onClick={handlePointerDown}
         /></div>
     </div>
     )

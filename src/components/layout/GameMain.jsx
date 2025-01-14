@@ -8,13 +8,14 @@ const GameMain = () => {
     return (
     <>
         {/* Main Content Grid */}
-        <div className="w-full relative">
+        <div className="w-full relative bg-black lg:grid-cols-2">
             <Views />
+            <Panel />
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8'>
                 <Details />
                 <Puzzle />
                 <Verbs />
-                <Panel />
+
             </div>
         </div>
     </>

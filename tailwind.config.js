@@ -7,9 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'clockpax-dark': '#0000F7',
-          primary: '#1f2937',
-
+        'clockpax-dark': '#fefbe9',
+          primary: '#0f1115',
+          dark: '#000000',
+          light: '#fefbe9'
       },
       theme: {
         extend: {

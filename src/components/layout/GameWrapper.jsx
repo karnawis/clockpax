@@ -26,10 +26,11 @@ const GameWrapper = ({ children }) => {
 
 
     return (
-        <div id="game-wrapper" className="relative bg-gray-800 text-white min-h-screen">
+        <div id="game-wrapper" className="relative bg-black-800 text-light min-h-screen">
             {reveal ? (
                 <div id='reveal-screen'>
                     <h1 className='text-5xl font-bold text-white-500'>Welcome to clockPax Game</h1>
+                    <p>This nonlinear structure ties the worlds together through Fefe’s perspective, blending surrealism, emotional depth, and a sense of discovery.</p>
                     <button onClick={ revealScreenOn }>Ready to play</button>
                 </div>
             ) : (
