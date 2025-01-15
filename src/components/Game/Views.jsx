@@ -1,4 +1,4 @@
-import { useGameProvider } from "../GameProvider"
+import { useGameProvider } from "../../hook/useCustomHook";
 import Interactable from "../core/Interactable";
 const Views = () => {
     const {
@@ -9,8 +9,6 @@ const Views = () => {
         const handlePointerDown = (event) => {
             const x = event.nativeEvent.offsetX
             const y = event.nativeEvent.offsetY
-            console.log('X',x, 'y', y)
-            //handler(verbs)
         }
         
     return (

@@ -1,16 +1,17 @@
-import { useGameProvider } from "../GameProvider";
+import { useGameProvider } from '../../hook/useCustomHook';
 
 const Puzzle = () => {
     const { puzzleWords, trackedScenes } = useGameProvider();
 
 
 const puzzleClass = (puzzle) => {
+    console.log("puzzle", puzzle)
     if (trackedScenes.includes(puzzle.key)) {
         console.log(trackedScenes)
-        return "task-completed"
+        return "puzzle-completed"
     } else {
         console.log(trackedScenes)
-        return "task-incomplete"
+        return "puzzle-completed"
     }
     // alert(puzzle)
     // if (trackedScenes.includes(puzzle.key)) {

@@ -10,7 +10,8 @@ export default {
         'clockpax-dark': '#fefbe9',
           primary: '#0f1115',
           dark: '#000000',
-          light: '#fefbe9'
+          light: '#fefbe9',
+          completed: '#cf375c',
       },
       theme: {
         extend: {

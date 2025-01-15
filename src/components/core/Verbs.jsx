@@ -1,4 +1,4 @@
-import { useGameProvider } from "../GameProvider"
+import { useGameProvider } from "../../hook/useCustomHook"
 import PropTypes from 'prop-types'
 
 const Verbs = () => {

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useGameProvider } from '../GameProvider';
+import { useGameProvider } from '../../hook/useCustomHook';
 import PanelButtons from '../ui/PanelButtons';
 
 

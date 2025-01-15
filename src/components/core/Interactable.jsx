@@ -5,10 +5,7 @@ const Interactable = ({ interactable, handler }) => {
 
     const handlePointerDown = () => {
         handler(verbs);
-        console.log('verbs >>',verbs)
     };
-
-    console.log(`interactables >> ${interactable} interactables ${interactable} ` )
     
     return (
     <div className="rounded-lg shadow">

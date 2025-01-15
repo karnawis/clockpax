@@ -1,4 +1,4 @@
-import { useGameProvider } from "../GameProvider";
+import { useGameProvider } from "../../hook/useCustomHook";
 const Details = () => {
     const  {  currentDetails } = useGameProvider();
     return (
