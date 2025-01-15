@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 const PanelButtons = ({ name, onClick }) => {
     return (
         <button
-            className='exit w-10 h-10 bg-gray-300 hover:bg-gray-400 rounded-full flex items-center justify-center text-gray-800'
+            className='exit m-1 p-3 bg-gray-300 hover:bg-gray-400 rounded-lg flex items-center justify-center text-slate-800'
             onClick={onClick}>
                 {name}
         </button>

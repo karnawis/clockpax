@@ -8,6 +8,7 @@
 
     //const { scenes, verbs, poemWords } = data
     const [currentScene, setCurrentScene] = useState(scenes.scene3)
+
     const [currentDetails, setCurrentDetails] = useState(
         scenes.scene3.details
     )
@@ -31,8 +32,20 @@
             setCurrentVerb("default")
         }
     }
+
+    const [trackedScenes, setTrackedScenes] = useState(["scene1"])//change it 
+
+    const addTrackedScene = (sceneKey) => {
+        console.log('sceneKey >>',sceneKey)
+        const index = trackedScenes.indexOf(sceneKey)
+        if (index === -1) {
+          let updatedScenes = [...trackedScenes]
+          updatedScenes.push(sceneKey)
+          setTrackedScenes(updatedScenes)
+          console.log('updated scene >>',updatedScenes, 'trackedScenes', trackedScenes)
+        }
+      }
     /*
-    const [trackedScenes, setTrackedScenes] = useState(["scene3"])//change it 
     const addTrackScenes = (sceneKey) => {
     const index = setTrackedScenes.indexOf(sceneKey)
         if (index === -1) {
@@ -71,6 +84,9 @@
                 currentDetails,
                 setCurrentDetails,
                 handleInteraction,
+                trackedScenes,
+                setTrackedScenes,
+                addTrackedScene
             }}>
             {children}
         </GameContext.Provider>

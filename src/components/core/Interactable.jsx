@@ -21,21 +21,21 @@ const Interactable = ({ interactable, handler }) => {
             }}
             onPointerDown={handlePointerDown} /> */}
             <div id="interactable"
-            style={{
-            position: 'absolute',
-            left: x,
-            top: y,
-            width: width,
-            height: height,
-            //backgroundImage: `url(./images/${image || imgBoxPlaceholder })`,
-            backgroundImage: `url(${imgBoxPlaceholderPath }})`,
-            opacity: 1,
-            zIndex: 999,
-            border: '1px solid black',
-            display: 'block',
-            background: 'red'
-            }}
-            onClick={handlePointerDown}
+                style={{
+                position: 'absolute',
+                left: x,
+                top: y,
+                width: width,
+                height: height,
+                //backgroundImage: `url(./images/${image || imgBoxPlaceholder })`,
+                backgroundImage: `url(${imgBoxPlaceholderPath }})`,
+                opacity: 0.2,
+                zIndex: 999,
+                border: '1px solid black',
+                display: 'block',
+                background: 'red'
+                }}
+                onClick={handlePointerDown}
         /></div>
     </div>
     )

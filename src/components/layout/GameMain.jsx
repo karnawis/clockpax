@@ -6,7 +6,7 @@ import Panel from '../core/Panel';
 
 const GameMain = () => {
     return (
-        <div className="w-full min-h-screen">
+        <div className="w-full">
             <div className="relative mb-4">
                 <Views />
                 <Panel />

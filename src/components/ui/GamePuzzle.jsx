@@ -1,28 +1,36 @@
 import { useGameProvider } from "../GameProvider";
+
 const Puzzle = () => {
-    const { puzzleWords } = useGameProvider();
+    const { puzzleWords, trackedScenes } = useGameProvider();
 
-    // const { tasks, visitedRooms } = useGameProvider()
 
-    // const taskClass = (task) => {
-    //   if (visitedRooms.includes(task.key)) {
-    //     return "task-completed"
-    //   }
-    //}
+const puzzleClass = (puzzle) => {
+    if (trackedScenes.includes(puzzle.key)) {
+        console.log(trackedScenes)
+        return "task-completed"
+    } else {
+        console.log(trackedScenes)
+        return "task-incomplete"
+    }
+    // alert(puzzle)
+    // if (trackedScenes.includes(puzzle.key)) {
+    //     return "scene-completed";
+    // }
+    // return "";
+    
+};
+
 
     return (
     <div className="bg-white p-4 rounded-lg shadow">
         <h2 className="text-xl font-bold text-gray-800 mb-2">Puzzle</h2>
-        {<ul>
+        <ul>
             {puzzleWords.map((puzzleWord) => (
-                <li className="text-slate-500"
-                key={puzzleWord.key}
-                >
-                {puzzleWord.name}
+                <li onClick={()=> {puzzleClass(puzzleWord.key)}} className="text-slate-500" key={puzzleWord.key}>
+                    {puzzleWord.name}
                 </li>
             ))}
-            </ul>
-        }
+        </ul>
     </div>
     )
 }

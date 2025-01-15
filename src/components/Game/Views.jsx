@@ -14,7 +14,7 @@ const Views = () => {
         }
         
     return (
-        <div id="views" className="rounded-lg flex shadow items-center justify-center min-h-screen" style={{position: 'relative'}} onPointerDown={handlePointerDown}>
+        <div id="views" className="rounded-lg flex shadow items-center justify-center" style={{position: 'relative'}} onPointerDown={handlePointerDown}>
             {/*<h3 className="text-light-800">{currentScene.name } </h3>*/}
             <div className="rounded-lg mx-auto w-[500px]"
                 style={{
@@ -36,7 +36,7 @@ const Views = () => {
                 />
             ))}
             <div id="puzzle-number" className="absolute top-1/4 left-1/4 w-6 h-6 bg-transparent flex items-start justify-right">
-                <p className="text-blue-500 font-bold text-xs">
+                <p id="puzzle-number-button" className="font-bold text-xs">
                     {currentScene.puzzle}
                 </p>
             </div>
