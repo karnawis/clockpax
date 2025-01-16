@@ -2,44 +2,34 @@ import { useGameProvider } from "../../hook/useCustomHook"
 import PropTypes from 'prop-types'
 
 const Verbs = () => {
-    const { setCurrentScene,
-            setCurrentDetails,
-            verbs, 
-            currentVerb,
-            setCurrentVerb
+    const { verbs, 
+            currentVerb, 
+            handleSelectVerb,
+            handleCancelVerb,          
         } = useGameProvider()
 
-    const handleSelect = (verb) => {
-            setCurrentVerb(verb)
-            const details = `What would you like to ${verb}?`
-            setCurrentDetails([details])
-            }
-        
-        const handleCancel = () => {
-            setCurrentVerb("")
-            setCurrentDetails(setCurrentScene.details)
-            }
     const Active = ({ verb }) => (
     <>
-        <span className='active-verb text-slate-500'>{verb}</span>
         <button
-            className='active-cancel text-red-500 text-slate-500'
-            onClick={() => handleCancel()}
+            id="verb-active"
+            className='verb-active text-slate-500 px-5 py-2.5'
+            onClick={() => handleCancelVerb()}
             >
             {verb}
+            <span className="text-slate-500 px-5 py-2.5">[X]</span>
         </button>
     </>
     )
 
     const Inactive = ({ verb }) => (
-    <button
-        className='inactive-verb text-slate-500'
-        onClick={() => {
-        handleSelect(verb)
-        }}
-        >
-        {verb}
-    </button>
+        <button id="verb-inactive"
+            className='verb-inactive text-slate-500 px-5 py-2.5'
+            onClick={() => {
+            handleSelectVerb(verb)
+            }}
+            >
+            {verb}
+        </button>
     )
 
     Active.propTypes = {

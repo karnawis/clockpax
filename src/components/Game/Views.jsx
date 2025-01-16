@@ -39,10 +39,8 @@ const Views = () => {
                 </p>
             </div>
         </div>
-    
-                {/*<img className="w-full" src={currentScene?.image} alt={currentScene.name} />*/}
-            </div>
-
+        {/*<img className="w-full" src={currentScene?.image} alt={currentScene.name} />*/}
+    </div>
     )
 }
 

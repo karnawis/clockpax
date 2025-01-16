@@ -22,3 +22,15 @@ h1, h2, h3, h4, h5, h6 {
 .puzzle-completed {
     color: var(--completed);
 }
+
+.puzzle-not-completed {
+    color: var(--dark);
+}
+
+.verb-inactive {
+    text-decoration: none;
+}
+
+.verb-active {
+    text-decoration: underline;
+}

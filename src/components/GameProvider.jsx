@@ -14,13 +14,10 @@
     )
     const [currentVerb, setCurrentVerb] = useState("explore")   
 
-    const handleVerb = (verbKey) => {
-        if (verbs?.[verbKey]?.[currentVerb]) {
-            const  aheadScene = scenes[verbs[verbKey][currentVerb].aheadScene]
-            setCurrentScene(aheadScene)
-            setCurrentDetails(verbs[verbKey][currentVerb])
-            setCurrentVerb("")
-        }
+    const handleSelectVerb = (verb) => {
+        setCurrentVerb(verb)
+        const details = `What would you like to ${verb}?`
+        setCurrentDetails([details])
     }
 
     const handleInteraction = (verbs) => {
@@ -28,27 +25,31 @@
             setCurrentDetails(verbs[currentVerb].details)
             setCurrentVerb("default")
         }
-    }
+        if (verbs?.[currentVerb]?.aheadScene) {
+            const aheadScene = scenes[verbs[currentVerb].aheadScene]
+            setCurrentScene(aheadScene);
+            setCurrentDetails(aheadScene.details);
+            setCurrentVerb("default")
+            addTrackedScene(aheadScene.key)
+        }
+    } //end of handleInteraction
 
-    const [trackedScenes, setTrackedScenes] = useState(["scene1"])//change it 
+    const handleCancelVerb = () => {
+        setCurrentVerb("")
+        setCurrentDetails(setCurrentScene.details)
+        }
+
+    const [trackedScenes, setTrackedScenes] = useState(["s1"])//change it 
 
     const addTrackedScene = (sceneKey) => {
         const index = trackedScenes.indexOf(sceneKey)
         if (index === -1) {
-          let updatedScenes = [...trackedScenes]
-          updatedScenes.push(sceneKey)
-          setTrackedScenes(updatedScenes)
-        }
-      }
-    /*
-    const addTrackScenes = (sceneKey) => {
-    const index = setTrackedScenes.indexOf(sceneKey)
-        if (index === -1) {
-       // let updatedRooms = [...trackedScenes]
-       //updatedScene.push(sceney)
-        //setVisitedRooms(updatedRooms)
+            let updatedScenes = [...trackedScenes]
+            updatedScenes.push(sceneKey)
+            setTrackedScenes(updatedScenes)
         }
     }
+    /*
         
     const clearTrackedScenes = () => setTrackedScenes([])
 
@@ -58,6 +59,7 @@
     const handleExit = (exit) => {
         setCurrentScene(exit) 
         setCurrentDetails(exit.details)
+        addTrackedScene(exit.key)
     }
 
     return (
@@ -66,9 +68,7 @@
                 scenes, 
                 currentScene, 
                 setCurrentScene, 
-                handleExit,
                 puzzleWords,
-                handleVerb,
                 verbs,
                 currentVerb,
                 setCurrentVerb, 
@@ -76,6 +76,9 @@
                 currentDetails,
                 setCurrentDetails,
                 handleInteraction,
+                handleSelectVerb ,
+                handleExit,
+                handleCancelVerb,
                 trackedScenes,
                 setTrackedScenes,
                 addTrackedScene

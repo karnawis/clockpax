@@ -1,6 +1,7 @@
 const Footer = () => {
+    const year = new Date().getFullYear();
     <footer>
-        <p className="text-white font-bold text-sm">© 2025 - All rights reserved</p>
+        <p className=" font-bold  text-slate-500">© {year} - All rights reserved</p>
     </footer>
 }
 
