@@ -8,8 +8,10 @@
 
 # to do list
 
-- feed off the panel, show table
-- Display image
+- when feeding data set Sceneset > scene9Obect1 use { aheadScene: 's19', it breaks}
+- map puzzle, to the corresponding keys, add all data sets, each scene should have 2 interactable objects, at least one takes to 'aheadScene' scene09 > s19, it's under default now, when fixed it needs to go under use and explore.
+- replace place holder with eaningful detials to the story
+- move to mongo db
 
 # Done
 
