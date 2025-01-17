@@ -11,28 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16' 
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build the React app with Vite
-      run: npm run build
+      - name: Build the React app with Vite
+        run: npm run build
 
-    - name: Deploy to AWS Amplify
-      env:
-        AMPLIFY_API_KEY: ${{ secrets.AMPLIFY_API_KEY }}
-      run: |
-        if [ "${GITHUB_REF##*/}" == "main" ]; then
-          # Deploy to production (main branch)
-          amplify publish --env prod
-        else
-          # Deploy to preview (development branch)
-          amplify publish --env dev
-        fi
+      - name: Deploy to AWS Amplify
+        env:
+          AMPLIFY_API_KEY: ${{ secrets.AMPLIFY_API_KEY }}
+        run: |
+          if [ "${GITHUB_REF##*/}" == "main" ]; then
+            # Deploy to production (main branch)
+            amplify publish --env prod
+          else
+            # Deploy to preview (development branch)
+            amplify publish --env dev
+          fi
