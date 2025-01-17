@@ -1,7 +1,7 @@
 export const verbSets = {
     scene1Object1: {
         use: {
-            nextScene: 'scene2',
+            aheadScene: 'scene2',
         },
         explore: {
             details: ['placeholder for details - explore - object1 explore scene1'],
@@ -15,7 +15,7 @@ export const verbSets = {
             details: ['placeholder for details - explore - object1 explore scene1'],
         },
         default: {
-            nextScene: 'scene3'
+            aheadScene: 'scene3'
         }
     },
     scene2Object1: {
@@ -42,7 +42,7 @@ export const verbSets = {
             details: ['placeholder for details about object1 explore scene3 object 1'],
         },
         default: {
-            nextScene: 'scene2'
+            aheadScene: 'scene2'
         }
     },
     scene3Object2: {
@@ -53,7 +53,7 @@ export const verbSets = {
             details: ['placeholder for details about object2 explore scene3 object 2'],
         },
         default: {
-            nextScene: 'scene1'
+            aheadScene: 'scene1'
         }
     },
 

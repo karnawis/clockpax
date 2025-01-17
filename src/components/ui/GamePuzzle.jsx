@@ -4,15 +4,17 @@ const Puzzle = () => {
     const { puzzleWords, trackedScenes } = useGameProvider();
 
 
-const puzzleClass = (puzzle) => {
-    console.log("puzzle", puzzle)
-    if (trackedScenes.includes(puzzle.key)) {
-        console.log(trackedScenes)
+const puzzleClass = (puzzleWord) => {
+    console.log("tracked scene >>", trackedScenes, "puzzleWord.key", puzzleWord.key, puzzleWord.name, puzzleWord)    
+    if (trackedScenes.includes(puzzleWord.key)) {
+        console.log('completed',trackedScenes)
         return "puzzle-completed"
     } else {
-        console.log(trackedScenes)
-        return "puzzle-completed"
+        return "puzzle-not-completed"
+        //console.log('not completed', 'trackedScenes.includes(puzzle.key)', trackedScenes.includes(puzzle.key), 'trackedScenes.includes(puzzle.key)', trackedScenes)
     }
+
+    
     // alert(puzzle)
     // if (trackedScenes.includes(puzzle.key)) {
     //     return "scene-completed";
@@ -27,7 +29,10 @@ const puzzleClass = (puzzle) => {
         <h2 className="text-xl font-bold text-gray-800 mb-2">Puzzle</h2>
         <ul>
             {puzzleWords.map((puzzleWord) => (
-                <li onClick={()=> {puzzleClass(puzzleWord.key)}} className="text-slate-500" key={puzzleWord.key}>
+                <li 
+                    key={puzzleWord.key}
+                    className={puzzleClass(puzzleWord)} 
+                >
                     {puzzleWord.name}
                 </li>
             ))}

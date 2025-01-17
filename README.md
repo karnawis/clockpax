@@ -13,5 +13,6 @@
 
 # Done
 
-- add game provider and view port for each area
+- check why footer component isn't rendering
 - add ReactTyped for typing
+- add end
