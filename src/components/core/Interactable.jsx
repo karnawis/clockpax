@@ -26,11 +26,12 @@ const Interactable = ({ interactable, handler }) => {
                 height: height,
                 //backgroundImage: `url(./images/${image || imgBoxPlaceholder })`,
                 backgroundImage: `url(${imgBoxPlaceholderPath }})`,
-                opacity: 0.2,
+                opacity: 0.1,
                 zIndex: 999,
                 border: '1px solid black',
                 display: 'block',
-                background: 'red'
+                background: 'yellow',
+                borderRadius: '30%',
                 }}
                 onClick={handlePointerDown}
         /></div>
