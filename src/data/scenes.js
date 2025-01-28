@@ -368,8 +368,15 @@ export const scenes = {
         image: kaleidoscope,
         puzzle: "Puzzle 18",
         details: "Kaleidscope dej vu moment 18 - Scene 18 details", 
+    },
+    scene20: {
+        key: "s19",
+        name: "Kaleidscope dej vu moment 19 Name",
+        exits: { a1: "scene6" },
+        image: kaleidoscope,
+        puzzle: "Puzzle 19",
+        details: "Kaleidscope dej vu moment 19 - Scene 19 details", 
     }
-
 };
 
 export const puzzleWords = [

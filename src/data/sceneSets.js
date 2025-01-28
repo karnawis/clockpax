@@ -1,5 +1,4 @@
-import { scenes } from "./scenes";
-
+// Desc: This file contains the sceneSets object which contains all the scenes and their respective objects
 export const verbSets = {
     scene1Object1: {
         use: {
@@ -94,6 +93,17 @@ export const verbSets = {
             aheadScene: 'scene15'
         }
     },
+    scene5Object2: {
+        use: {
+            details: ['placeholder for details use scene5 object 2'],
+        },
+        explore: {
+            details: ['placeholder for details explore scene5 object 2'],
+        },
+        default: {
+            aheadScene: 'scene15'
+        }
+    },
     scene6Object1: {
         use: {
             details: ['placeholder for details use scene6 object 2'],
@@ -105,7 +115,7 @@ export const verbSets = {
             aheadScene: 'scene16'
         }
     },
-    scenes6Object2: {
+    scene6Object2: {
         use: {
             details: ['placeholder for details use scene6 object 2'],
         },
@@ -127,7 +137,7 @@ export const verbSets = {
             aheadScene: 'scene17'
         }
     },
-    scenes7Object2: {
+    scene7Object2: {
         use: {
             details: ['placeholder for details use scene7 object 2'],
         },

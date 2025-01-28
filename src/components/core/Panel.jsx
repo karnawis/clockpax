@@ -5,7 +5,18 @@ import PanelButtons from '../ui/PanelButtons';
 
 const Panel = () => {
     const { currentScene, scenes, handleExit } = useGameProvider();
-    const exits = currentScene.exits;
+    const initialScene = scenes.scene1;
+    const sceneToShow = currentScene || initialScene;
+
+    if (!sceneToShow.exits) {
+        return (
+            <div className="panel">
+                <p className="text-red-500">No exits available.</p>
+            </div>
+        );
+    }
+
+    const exits = sceneToShow.exits;
 
     const Exit = ({ exitName }) => {
         const exit = scenes[exitName]

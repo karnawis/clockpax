@@ -7,10 +7,9 @@
     export const GameProvider = ({ children }) => {
 
     //const { scenes, verbs, poemWords } = data
-    const [currentScene, setCurrentScene] = useState(scenes.scene3)
-
+    const [currentScene, setCurrentScene] = useState(scenes.scene3 || null)
     const [currentDetails, setCurrentDetails] = useState(
-        scenes.scene3.details
+        scenes.scene3?.details || ["What would you like to do?"]
     )
     const [currentVerb, setCurrentVerb] = useState("explore")   
 
@@ -36,10 +35,10 @@
 
     const handleCancelVerb = () => {
         setCurrentVerb("")
-        setCurrentDetails(setCurrentScene.details)
+        setCurrentDetails(setCurrentScene?.details || ["What would you like to do?"])
         }
 
-    const [trackedScenes, setTrackedScenes] = useState(["s1"])//change it 
+    const [trackedScenes, setTrackedScenes] = useState(["s2"])//change it 
 
     const addTrackedScene = (sceneKey) => {
         const index = trackedScenes.indexOf(sceneKey)
@@ -72,7 +71,7 @@
                 verbs,
                 currentVerb,
                 setCurrentVerb, 
-                interactables: currentScene.interactables,
+                interactables: currentScene?.interactables || [],
                 currentDetails,
                 setCurrentDetails,
                 handleInteraction,

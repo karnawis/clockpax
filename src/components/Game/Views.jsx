@@ -7,8 +7,20 @@ const Views = () => {
         } = useGameProvider();
 
         const handlePointerDown = (event) => {
-            const x = event.nativeEvent.offsetX
-            const y = event.nativeEvent.offsetY
+            try {
+                // Handle pointer down event
+                console.log("Pointer down event:", event);
+                // Add your event handling logic here
+            } catch (error) {
+                console.error("Error handling pointer down event:", error);
+            }
+        }
+        if (!currentScene) {
+            return (
+                <div id="views" className="rounded-lg flex shadow items-center justify-center" style={{ position: 'relative' }}>
+                    <p className="text-red-500">No scene available to display. Choose another scene</p>
+                </div>
+            );
         }
         
     return (
