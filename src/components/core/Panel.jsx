@@ -42,7 +42,7 @@ const Panel = () => {
     };
 
     return (
-    <div id="panel" className="absolute top-0 right-0">
+    <div id="panel" className="absolute top-0 right-0 z-40">
         <table>
             <tbody>
             {rowsMap.map((rowMap, rowMapIndex) => (

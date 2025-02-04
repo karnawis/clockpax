@@ -6,7 +6,6 @@ import GameWrapper from './components/layout/GameWrapper'
 import { GameProvider } from './components/GameProvider'
 
 function App() {
-  const year = new Date().getFullYear();
   return (
     <div>
       <GameProvider>
@@ -14,9 +13,6 @@ function App() {
           <Header />
           <GameMain />
           <Footer />
-          <footer>
-              <p className=" font-bold  text-slate-500">© {year} - All rights reserved - Sura </p>
-          </footer>
         </ GameWrapper>
       </GameProvider>
     </div>

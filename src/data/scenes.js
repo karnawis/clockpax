@@ -305,6 +305,7 @@ export const scenes = {
             }
         ]
     },
+    // puzzle solution
     scene11: {
         key: "s11",
         name: "Kaleidscope dej vu moment - Scene 11 Name",

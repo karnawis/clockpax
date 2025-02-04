@@ -2,11 +2,17 @@
 import { useState } from 'react';
 import useSound from 'use-sound';
 import tickSound from '../assets/sounds/soundbuttonclick.wav';
-const useSoundHandler = () => {
-    const [play, { stop }] = useSound(tickSound);
+
+const useSoundHandler = (track = tickSound) => {
+    const [play, { stop }] = useSound(track);
     const [isPlaying, setIsPlaying] = useState(false);
 
-    const handlePlaySound = () => {
+    const handlePlaySound = (newTrack) => {
+        if (newTrack && newTrack !== track) {
+            stop();
+            play(newTrack);
+            return;
+        }
         if (!isPlaying) {
             setIsPlaying(true);
             play();

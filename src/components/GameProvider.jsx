@@ -1,6 +1,8 @@
     import { createContext, useState } from "react";
     import PropTypes from "prop-types";
+    import useSoundHandler from "../hook/useSoundHandler";
     import { scenes, verbs, puzzleWords } from "../data/scenes";
+    import track from "../assets/sounds/soundbuttonclick.wav";
 
     export const GameContext = createContext()
 
@@ -12,11 +14,12 @@
         scenes.scene3?.details || ["What would you like to do?"]
     )
     const [currentVerb, setCurrentVerb] = useState("explore")   
-
+    const { handlePlaySound } = useSoundHandler(track)
     const handleSelectVerb = (verb) => {
         setCurrentVerb(verb)
         const details = `What would you like to ${verb}?`
         setCurrentDetails([details])
+        handlePlaySound();
     }
 
     const handleInteraction = (verbs) => {
@@ -36,7 +39,8 @@
     const handleCancelVerb = () => {
         setCurrentVerb("")
         setCurrentDetails(setCurrentScene?.details || ["What would you like to do?"])
-        }
+        handlePlaySound();
+    }
 
     const [trackedScenes, setTrackedScenes] = useState(["s2"])//change it 
 
